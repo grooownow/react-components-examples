@@ -17,7 +17,7 @@ import {
     FEMALE
 } from './constants';
 
-const styles = require('./GenderSelectorRanked.css');
+const styles = require('./GenderSelector.css');
 const cx: any = classNames.bind(styles);
 
 enum Gender {
