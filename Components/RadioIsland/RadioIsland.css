@@ -1,0 +1,105 @@
+.root {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    padding: 18px 17px 17px;
+    min-width: 266px;
+    border: 1px solid #c0c0b3;
+    border-radius: 6px;
+    cursor: pointer;
+
+    @media (--media-tablets) {
+        padding: 17px 17px 12px;
+    }
+
+    @media (--media-desktop) {
+        flex: 1;
+    }
+
+    &_checked {
+        z-index: 2;
+        border-width: 1px;
+        border-color: #eedf16;
+        box-shadow: inset 0 0 0 1px #eedf16;
+    }
+
+    &_inGroup {
+        @media (--media-mobile) {
+            &:not(:first-child) {
+                margin-top: -1px;
+                border-top-right-radius: 0;
+                border-top-left-radius: 0;
+            }
+
+            &:not(:last-child) {
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+
+        @media (--media-tablets) {
+            &:not(:first-child) {
+                margin-top: -1px;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+
+            &:not(:last-child) {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+
+        @media (--media-desktop) {
+            &:not(:first-child) {
+                margin-top: 0;
+                margin-left: 3px;
+                border-radius: 6px;
+            }
+
+            &:not(:last-child) {
+                margin-right: 3px;
+                border-radius: 6px;
+            }
+        }
+    }
+}
+
+.content {
+    display: flex;
+    flex: 1;
+}
+
+.radio {
+    position: absolute;
+    right: 17px;
+    top: 17px;
+}
+
+.spanRadio {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: #ececde;
+    vertical-align: middle;
+    cursor: pointer;
+
+    .inputRadio[type="radio"]:checked + & {
+        border: 10px solid #ececde;
+        background-color: #333;
+    }
+
+    .inputRadio[type="radio"]:checked:not([disabled]) + & {
+        border-color: #eedf16;
+    }
+
+    .inputRadio[type="radio"]:disabled + & {
+        opacity: .5;
+    }
+}
