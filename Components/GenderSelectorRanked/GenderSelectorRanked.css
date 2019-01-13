@@ -1,0 +1,31 @@
+:root {
+    --border-selected: 2px solid #eedf16;
+    --border-default: 1px solid #c0c0b3;
+}
+
+.root {
+    display: flex;
+}
+
+.gender {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 56px;
+    border: var(--border-default);
+    background: transparent;
+
+    &:first-child {
+        border-radius: 4px 0 0 4px;
+    }
+
+    &:last-child {
+        border-radius: 0 4px 4px 0;
+    }
+
+    &_selected {
+        border: var(--border-selected);
+    }
+}
